@@ -6,3 +6,4 @@
 [node name="Projectile" type="Sprite"]
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
+speed = 110.0
