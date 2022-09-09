@@ -31,3 +31,8 @@ func _remove():
 	get_parent().remove_child(self)
 	queue_free()
 	
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		body.queue_free()
