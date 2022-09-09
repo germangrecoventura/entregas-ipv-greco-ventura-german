@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+class_name Player
 onready var cannon = $Cannon
 
 export (float) var ACCELERATION:float = 20.0
