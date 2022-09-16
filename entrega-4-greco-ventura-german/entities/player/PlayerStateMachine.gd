@@ -6,7 +6,9 @@ func _ready():
 		"idle": $Idle,
 		"walk": $Walk,
 		"jump": $Jump,
-		"dead": $Dead
+		"dead": $Dead,
+		"dash-left": $DashLeft,
+		"dash-right": $DashRight
 	}
 
 
