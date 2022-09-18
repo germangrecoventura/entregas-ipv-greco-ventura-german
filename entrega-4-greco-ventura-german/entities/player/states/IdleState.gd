@@ -8,6 +8,8 @@ func handle_input(event:InputEvent):
 		emit_signal("finished","jump")
 
 func update(delta:float):
+#	if PlayerData.current_health == 0:
+#		emit_signal("finished","dead")
 	parent._handle_cannon_actions()
 	parent._handle_deacceleration()
 	parent._apply_movement()

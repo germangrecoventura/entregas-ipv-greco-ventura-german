@@ -11,6 +11,8 @@ func handle_input(event:InputEvent):
 		emit_signal("finished","dash-right")
 
 func update(delta):
+	#if PlayerData.current_health == 0:
+	#	emit_signal("finished","dead")
 	parent._handle_cannon_actions()
 	parent._handle_move_input()
 	parent._apply_movement()
