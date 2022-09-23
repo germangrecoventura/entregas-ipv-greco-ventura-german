@@ -6,6 +6,7 @@ var jumps:int = 0
 
 
 func enter():
+	parent._play_animation("jump")
 	parent.snap_vector = Vector2.ZERO
 	parent.velocity.y = -parent.jump_speed
 

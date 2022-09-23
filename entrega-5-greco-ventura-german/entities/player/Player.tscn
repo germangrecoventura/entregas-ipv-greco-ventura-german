@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/states/WalkState.gd" type="Script" id=2]
@@ -65,6 +65,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "jump"
+loop = true
+step = 0.041
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 74 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -149,4 +166,5 @@ cast_to = Vector2( 0, 5 )
 anims/RESET = SubResource( 2 )
 anims/dead = SubResource( 5 )
 anims/idle = SubResource( 4 )
+anims/jump = SubResource( 6 )
 anims/walk = SubResource( 3 )
