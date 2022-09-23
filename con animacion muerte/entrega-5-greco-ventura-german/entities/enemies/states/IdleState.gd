@@ -10,6 +10,7 @@ func notify_body_entered(body):
 
 
 func enter():
+	parent._play_animation("idle")
 	idle_timer.start()
 
 

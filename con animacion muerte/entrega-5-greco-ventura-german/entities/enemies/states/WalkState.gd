@@ -5,7 +5,7 @@ export (float) var speed
 export (float) var max_h_speed
 
 var path:Array = []
-
+onready var sprite:AnimatedSprite = $"../../AnimatedSprite"
 
 func notify_body_entered(body):
 	.notify_body_entered(body)
