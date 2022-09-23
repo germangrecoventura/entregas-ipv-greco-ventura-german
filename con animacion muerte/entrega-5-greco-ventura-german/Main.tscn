@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/floor.png" type="Texture" id=2]
 [ext_resource path="res://Main.gd" type="Script" id=3]
 [ext_resource path="res://entities/enemies/Turret.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/textures/background.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/background/Layer_0004_Lights.png" type="Texture" id=5]
 [ext_resource path="res://enviroment/objects/Platform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://enviroment/objects/Ramp.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/SpawnManager.gd" type="Script" id=8]
@@ -13,6 +13,9 @@
 [ext_resource path="res://entities/AstarTilemap.tscn" type="PackedScene" id=11]
 [ext_resource path="res://enviroment/items/Trophy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://enviroment/objects/MovingPlatform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/textures/background/Layer_0010_1.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/background/Layer_0009_2.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/background/Layer_0005_5.png" type="Texture" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -49,14 +52,6 @@ extents = Vector2( 274.258, 29.8909 )
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Background" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 511.866, 301.46 )
-scale = Vector2( 1.28716, 1.01413 )
-texture = ExtResource( 5 )
-
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Environment"]
@@ -70,6 +65,48 @@ max_health = 20
 
 [node name="Camera" type="Camera2D" parent="Environment/Player"]
 current = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Environment/Player/Camera"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Environment/Player/Camera/ParallaxBackground"]
+position = Vector2( -202, -867 )
+motion_scale = Vector2( 0.1, 0 )
+motion_mirroring = Vector2( 4640, 0 )
+
+[node name="Sprite" type="Sprite" parent="Environment/Player/Camera/ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 5, 3 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Environment/Player/Camera/ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 7424, 5551 )
+
+[node name="Sprite" type="Sprite" parent="Environment/Player/Camera/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -793, -3605 )
+scale = Vector2( 8, 7 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Environment/Player/Camera/ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 7424, 5551 )
+
+[node name="Sprite" type="Sprite" parent="Environment/Player/Camera/ParallaxBackground/ParallaxLayer3"]
+position = Vector2( -793, -3605 )
+scale = Vector2( 8, 7 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Environment/Player/Camera/ParallaxBackground"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 7424, 5551 )
+
+[node name="Sprite" type="Sprite" parent="Environment/Player/Camera/ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -1170, -2601 )
+scale = Vector2( 8, 5 )
+texture = ExtResource( 16 )
+centered = false
 
 [node name="TurretSpawn" type="Node" parent="Environment"]
 script = ExtResource( 8 )
