@@ -121,7 +121,7 @@ position = Vector2( 2199.54, 888.108 )
 
 [node name="Platform4" parent="Environment" instance=ExtResource( 6 )]
 show_behind_parent = true
-position = Vector2( 1385.75, 272.751 )
+position = Vector2( 1386, 273 )
 
 [node name="Platform5" parent="Environment" instance=ExtResource( 6 )]
 show_behind_parent = true
