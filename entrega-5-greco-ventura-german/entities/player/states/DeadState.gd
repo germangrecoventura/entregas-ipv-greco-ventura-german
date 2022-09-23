@@ -1,7 +1,9 @@
 extends "res://entities/AbstractState.gd"
 
 func enter():
-	yield(get_tree().create_timer(0.5), "timeout")
+	parent._play_animation("dead")
+	parent.cannon.queue_free()
+	yield(get_tree().create_timer(1.20), "timeout")
 	parent._remove()
 
 

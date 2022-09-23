@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/states/WalkState.gd" type="Script" id=2]
@@ -29,6 +29,24 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 46 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "dead"
+length = 1.19
+loop = true
+step = 0.041
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.138379, 0.164, 0.205, 0.246, 0.287, 0.328, 0.369, 0.41, 0.451, 0.492, 0.533, 0.574, 0.615, 0.656, 0.697, 0.738, 0.779, 0.82, 0.861, 0.902, 0.943, 0.984, 1.025, 1.066, 1.107, 1.148, 1.189 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -71,6 +89,7 @@ tracks/0/keys = {
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 1 )
+max_health = 2
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 3 )
@@ -96,7 +115,6 @@ speed_multiplier = 4.0
 [node name="Body" type="Sprite" parent="."]
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 7 )
-flip_h = true
 hframes = 15
 vframes = 8
 frame = 46
@@ -129,5 +147,6 @@ cast_to = Vector2( 0, 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 2 )
+anims/dead = SubResource( 5 )
 anims/idle = SubResource( 4 )
 anims/walk = SubResource( 3 )
