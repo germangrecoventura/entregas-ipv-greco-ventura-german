@@ -11,6 +11,7 @@ export (PackedScene) var projectile_scene
 
 var target
 var projectile_container
+onready var animation_turret:AnimatedSprite =$AnimatedSprite
 
 var pathfinding:PathfindAstar
 
@@ -48,6 +49,10 @@ func apply_movement():
 
 func notify_hit(amount):
 	state_machine.notify_hit(amount)
+
+
+func _play_animation(anim_name:String):
+	animation_turret.play(anim_name)
 
 
 func _remove():

@@ -10,6 +10,7 @@ func notify_body_exited(body):
 
 
 func enter():
+	parent._play_animation("idle")
 	parent.velocity.x = 0
 	parent.call_deferred("fire")
 	fire_timer.start()
