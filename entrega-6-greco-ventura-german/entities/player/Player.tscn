@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/states/WalkState.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://entities/player/states/JumpState.gd" type="Script" id=10]
 [ext_resource path="res://entities/player/states/DashState.gd" type="Script" id=11]
 [ext_resource path="res://assets/textures/player/raygunPurpleBig.png" type="Texture" id=12]
+[ext_resource path="res://assets/audio/sfx/PlayerAttack.ogg" type="AudioStream" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "dead"
@@ -108,6 +109,7 @@ height = 76.5765
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 1 )
+fire_sfx = ExtResource( 13 )
 
 [node name="PlayerAnimation" type="AnimationPlayer" parent="."]
 anims/dead = SubResource( 1 )
