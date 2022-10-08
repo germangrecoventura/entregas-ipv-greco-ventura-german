@@ -10,7 +10,6 @@ onready var cannon_container = $Body/Slime/CannonContainer
 onready var state_machine = $StateMachine
 onready var floor_raycasts:Array = $FloorRaycasts.get_children()
 onready var player_animation = $PlayerAnimation
-onready var player_sfx = $PlayerSfx
 
 const FLOOR_NORMAL := Vector2.UP
 const SNAP_DIRECTION := Vector2.DOWN
@@ -23,8 +22,6 @@ export (float) var H_SPEED_LIMIT:float = 400.0
 export (int) var jump_speed = 1000
 export (float) var FRICTION_WEIGHT:float = 0.1
 export (int) var gravity = 30
-export (AudioStream) var fire_sfx
-export (AudioStream) var damage_sfx
 
 var projectile_container
 
@@ -78,7 +75,6 @@ func _handle_cannon_actions():
 			projectile_container = get_parent()
 			cannon.projectile_container = projectile_container
 		cannon.fire()
-		_action_audio(fire_sfx)
 
 
 func _apply_movement():
@@ -115,8 +111,3 @@ func _play_animation(animation_name:String, should_restart:bool = true, playback
 			player_animation.stop()
 		player_animation.playback_speed = playback_speed
 		player_animation.play(animation_name)
-
-
-func _action_audio(audio):
-	player_sfx.stream = audio
-	player_sfx.play()

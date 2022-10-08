@@ -1,10 +1,11 @@
 extends "res://entities/AbstractState.gd"
+onready var player_sfx = $"../../PlayerSfx"
 
 func enter():
 	parent._play_animation("dead")
 	var sfx = load("res://assets/audio/bgm/gameOver.ogg")
-	$"../../PlayerSfx".stream = sfx
-	$"../../PlayerSfx".play()
+	player_sfx.stream = sfx
+	player_sfx.play()
 	
 
 func update(delta):

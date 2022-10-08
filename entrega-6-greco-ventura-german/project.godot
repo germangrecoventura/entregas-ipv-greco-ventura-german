@@ -32,7 +32,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="entrega-6-greco-ventura-german"
+config/name="Proyecto Godot - Clase 7"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
