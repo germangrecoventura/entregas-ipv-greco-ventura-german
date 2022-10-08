@@ -2,7 +2,10 @@ extends "res://entities/AbstractState.gd"
 
 func enter():
 	parent._play_animation("dead")
-
+	var sfx = load("res://assets/audio/bgm/gameOver.ogg")
+	$"../../PlayerSfx".stream = sfx
+	$"../../PlayerSfx".play()
+	
 
 func update(delta):
 	parent._handle_deacceleration()
